@@ -20,6 +20,7 @@ mod = first % second
 
 print(add, sub, mul, div, exp, floor, mod)
 
+#якщо брати порівняння чисел результатів попередньої задачі:
 bool1 = mod > floor
 bool2 = exp < mod
 bool3 = sub == mul
