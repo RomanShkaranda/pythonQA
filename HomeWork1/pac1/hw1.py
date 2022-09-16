@@ -6,7 +6,7 @@
 #IDE
 #https://www.jetbrains.com/pycharm/
 
-
+#задача 1
 first = 10
 second = 30
 
@@ -20,7 +20,19 @@ mod = first % second
 
 print(add, sub, mul, div, exp, floor, mod)
 
+
+#задача 2
+#якщо використовувати змінні з попередньої задачі:
+
+b1 = first > second
+b2 = first < second
+b3 = first == second
+b4 = first != second
+
+print(b1, b2, b3, b4)
+
 #якщо брати порівняння чисел результатів попередньої задачі:
+
 bool1 = mod > floor
 bool2 = exp < mod
 bool3 = sub == mul
