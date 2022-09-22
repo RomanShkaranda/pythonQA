@@ -23,7 +23,7 @@ elif inputInt < 16:
     print("Це фільм для дорослих!")
 elif inputInt > 65:
     print("Покажіть пенсійне посвідчення!")
-elif '7' in userInput:
+elif "7" in userInput:
     print("Вам сьогодні пощастить!")
 else:
     print("А білетів вже немає!")
