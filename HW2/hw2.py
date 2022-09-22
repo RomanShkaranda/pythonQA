@@ -11,16 +11,17 @@
 
 
 userInput = input("Твій вік: ")
+inputInt = int(userInput)
 
 if not userInput.isdigit(): # суто перевірка чи число
     print("Не смішно!")
-elif int(userInput) > 120: # загуглив що найстарішій людині на зараз 116 років, округлив до 120
+elif inputInt > 120: # загуглив що найстарішій людині на зараз 116 років, округлив до 120
     print("Введіть коректні дані")
-elif int(userInput) < 7:
+elif inputInt < 7:
     print("Де твої батьки?")
-elif int(userInput) < 16:
+elif inputInt < 16:
     print("Це фільм для дорослих!")
-elif int(userInput) > 65:
+elif inputInt > 65:
     print("Покажіть пенсійне посвідчення!")
 elif '7' in userInput:
     print("Вам сьогодні пощастить!")
