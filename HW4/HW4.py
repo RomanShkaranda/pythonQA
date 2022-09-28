@@ -13,6 +13,7 @@ lst2 = []
 for listItem in lst1:
     if type(listItem) == str:
         lst2.append(listItem)
+
 print(lst2)
 
 # 2
