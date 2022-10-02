@@ -31,7 +31,7 @@ splited = text.split()
 res = []
 
 for i in splited:
-    if i.endswith("o") or i.endswith(("o").upper()):
+    if i.endswith("o") or i.endswith("o".upper()):
         res.append(i)
 print(len(res))
 
