@@ -11,7 +11,7 @@
 
 # 1
 
-text = "Preserved defective offending he daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length. Advantages prosperous remarkably my inhabiting so reasonably be if. Too any appearance announcing impossible one. Out mrs means heart ham tears shall power every."
+text = "Preserved defective offending daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length. Advantages prosperous remarkably my inhabiting so reasonably be if. Too any appearance announcing impossible one. Out mrs means heart ham tears shall power every."
 text = text.split()
 list1 = []
 vowel = ["a", "e", "i", "o", "u"]
@@ -20,13 +20,25 @@ vowel1 = []
 for letters in vowel:
     for letters1 in vowel:
         res = letters1 + letters
-        if res not in vowel1:
-            vowel1.append(res)
+        uplow = letters1.upper() + letters
+        lowup = letters1 + letters.upper()
+        uplow1 = letters.upper() + letters1
+        lowup1 = letters + letters1.upper()
+        vowel1.append(uplow)
+        vowel1.append(lowup)
+        vowel1.append(uplow1)
+        vowel1.append(lowup1)
+        vowel1.append(res.upper())
+        vowel1.append(res)
 
-for i in text:
-    for a in vowel1:
-        if a in i:
-            list1.append(i)
+# vowel1 = set(vowel1)
+print(vowel1)
+
+for word in text:
+    for i in vowel1:
+        if i in word:
+            list1.append(text.index(word))
+            break
 
 print(len(list1))
 
