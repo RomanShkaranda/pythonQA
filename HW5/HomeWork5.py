@@ -12,35 +12,25 @@
 # 1
 
 text = "Preserved defective offending daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length. Advantages prosperous remarkably my inhabiting so reasonably be if. Too any appearance announcing impossible one. Out mrs means heart ham tears shall power every."
-text = text.split()
-list1 = []
 vowel = ["a", "e", "i", "o", "u"]
-vowel1 = []
 
-for letters in vowel:
-    for letters1 in vowel:
-        res = letters1 + letters
-        uplow = letters1.upper() + letters
-        lowup = letters1 + letters.upper()
-        uplow1 = letters.upper() + letters1
-        lowup1 = letters + letters1.upper()
-        vowel1.append(uplow)
-        vowel1.append(lowup)
-        vowel1.append(uplow1)
-        vowel1.append(lowup1)
-        vowel1.append(res.upper())
-        vowel1.append(res)
-
-# vowel1 = set(vowel1)
-print(vowel1)
+text = text.lower()
+text = text.split()
+paircounter = 0
 
 for word in text:
-    for i in vowel1:
-        if i in word:
-            list1.append(text.index(word))
-            break
+    list(word)
+    counter = 0
+    for letter in word:
+        if letter in vowel:
+            counter += 1
+            if counter == 2:
+                paircounter += 1
+                break
+        else:
+            counter = 0
 
-print(len(list1))
+print(paircounter)
 
 # 2
 
@@ -58,13 +48,13 @@ my_dict = {
 
 min_number = 35.9
 max_number = 37.339
-markets = []
+matchmarkets = []
 
-for money in my_dict.items():
-    if min_number < money[1] < max_number:
-        markets.append(money[0])
+for market in my_dict.items():
+    if min_number < market[1] < max_number:
+        matchmarkets.append(market[0])
 
 print("Min = ", min_number, "   ", "Max = ", max_number)
-print("Match =", markets)
+print("Match =", matchmarkets)
 
 
