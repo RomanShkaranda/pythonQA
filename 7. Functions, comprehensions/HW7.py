@@ -13,17 +13,30 @@
 # "Незважаючи на те, що вам 42 роки, білетів всеодно нема!"
 # Зробіть все за допомогою функцій! Не забувайте що кожна функція має виконувати тільки одне завдання і про правила написання коду.
 
-user_input = input("Your age: ")
 ending1 = ["2", "3", "4"] # роки
 ending2 = ["11", "12", "13", "14"] # років
+
+
+def check_if_int():
+    while True:
+        try:
+            userinput = int(input("Введіть Ваш вік: "))
+        except:
+            print("Невірні дані")
+        else:
+            break
+    return userinput
+
+
+user_input = check_if_int()
 
 
 def text_function():
     if user_input in ending2:
         text = "років"
-    elif user_input[-1] == "1":
+    elif str(user_input)[-1] == "1":
         text = "рік"
-    elif user_input[-1] in ending1:
+    elif str(user_input)[-1] in ending1:
         text = "роки"
     else:
         text = "років"
@@ -31,11 +44,11 @@ def text_function():
 
 
 def age_function(age):
-    if int(user_input) < 7:
+    if user_input < 7:
         print(f"Тобі ж {age} {text_function()}! Де твої батьки?")
-    elif int(user_input) < 16:
+    elif user_input < 16:
         print(f"Тобі лише {age} {text_function()}, а це фільм для дорослих!")
-    elif int(user_input) > 65:
+    elif user_input > 65:
         print(f"Вам {age} {text_function()}? Покажіть пенсійне посвідчення!")
     elif "7" in str(age):
         print(f"Вам {age} {text_function()}, вам пощастить")
