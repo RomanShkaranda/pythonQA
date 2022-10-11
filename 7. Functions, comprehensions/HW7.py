@@ -21,6 +21,9 @@ def check_if_int():
     while True:
         try:
             userinput = int(input("Введіть Ваш вік: "))
+            if userinput > 120 or userinput < 1:
+                print("Невірні дані")
+                continue
         except:
             print("Невірні дані")
         else:
@@ -32,7 +35,7 @@ user_input = check_if_int()
 
 
 def text_function():
-    if user_input in ending2:
+    if str(user_input) in ending2:
         text = "років"
     elif str(user_input)[-1] == "1":
         text = "рік"
