@@ -53,10 +53,10 @@ def age_function(age):
         print(f"Тобі лише {age} {text_function()}, а це фільм для дорослих!")
     elif user_input > 65:
         print(f"Вам {age} {text_function()}? Покажіть пенсійне посвідчення!")
-    elif "7" in str(age):
-        print(f"Вам {age} {text_function()}, вам пощастить")
     else:
         print(f"Незважаючи на те, що вам {age} {text_function()}, білетів всеодно нема!")
+    if "7" in str(age):
+        print(f"Вам {age} {text_function()}, вам пощастить")
     return age
 
 
