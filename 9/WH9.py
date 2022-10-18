@@ -17,6 +17,7 @@ def param_func(text):
             return return_value
 
         return wrapper
+
     return decorator
 
 
@@ -43,5 +44,14 @@ def main():
 
 main()
 
-
+assert type(is_even(1)) == bool, "Not bool"
+assert type(is_capital("")) == bool, "Not bool"
+assert is_capital("") is not None, "Function returns None"
+assert is_even(1) is not None, "Function returns None"
+assert is_even(1) is not True, "Incorrect value"
+assert is_even(2) is not False, "Incorrect value"
+assert is_capital("Aaaa") is True, "Incorrect value"
+assert is_capital("aaaa") is False, "Incorrect value"
+assert is_capital("aaAaa") is False
+assert is_even(2.4) is False
 
