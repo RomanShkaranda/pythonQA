@@ -32,7 +32,6 @@ import datetime
 from art import *
 
 
-
 class BankAccount:
     deposit_portfolio = 0
 
@@ -111,7 +110,7 @@ class BankAccount:
         """
         text = f"Власнику {self.user_name} закрито рахунок у звязку з ліквідацією банка, повернуто {self.first_summa}, власник претензій не має"
         self.first_summa -= self.first_summa
-        return text
+        print(text)
 
     def transfer(self, other, summa):
         """
@@ -139,7 +138,7 @@ class BankAccount:
     @staticmethod
     def adv_method():
         """
-        Фdvertising message
+        Advertising message
         :return:
         """
         text = tprint("Best bank ever!")
