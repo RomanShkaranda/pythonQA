@@ -96,3 +96,4 @@ school = School('Asterix and Obelix')
 print(school.teachers)
 print(school.total_money)
 school.change_dir()
+
