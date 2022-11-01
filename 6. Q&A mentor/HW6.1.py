@@ -15,6 +15,7 @@ for astr in response_json["people"]:
     astr_list.append(astr["name"])
 
 print(astr_list)
+print(response_json)
 
 
 

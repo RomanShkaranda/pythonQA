@@ -1,4 +1,4 @@
-# 1. Є list з даними lst1 = ['1', '2', 3, True, 'False', 5, '6. Q&A mentor', 7. Functions, comprehensions, 8, 'Python', 9, 0, 'Lorem Ipsum'].
+# 1. Є list з даними lst1 = ['1', '2', 3, True, 'False', 5, '6. Q&A mentor', 7. Functions, comprehensions, 8. Functions, namespaces, decorator, 'Python', 9, 0, 'Lorem Ipsum'].
 # Напишіть код, який свормує новий list (наприклад lst2), який містить лише змінні типу стрінг,
 # які присутні в lst1. Зауважте, що lst1 не є статичним і може формуватися динамічно.
 # 2. Є list довільних чисел, наприклад [11, 77, 4, 22, 0, 56, 5, 95, 7. Functions, comprehensions, 5, 87, 13, 45, 67, 44].

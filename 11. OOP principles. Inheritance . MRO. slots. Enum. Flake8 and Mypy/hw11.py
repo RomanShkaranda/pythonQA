@@ -73,5 +73,3 @@ school.change_dir()
 print(school.teachers)
 print(school.total_summa())
 print(school.director)
-
-print()

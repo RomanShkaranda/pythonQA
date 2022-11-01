@@ -28,7 +28,7 @@ assert type(string_cutter("*" * 200))
 assert len(string_cutter("*" * 200, 80)) == 80
 assert len(string_cutter("*" * 50, 80)) <= 80
 assert string_cutter("*" * 100, 80)[-3:] == "..."
-# assert string_cutter("*" * 50, 80)[-3:] == "***"
+assert string_cutter("*" * 50, 80)[-3:] == "***"
 
 
 

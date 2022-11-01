@@ -145,7 +145,7 @@
 # mylist2 = my_function()
 # print(mylist2)
 
-# Є list з даними lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum'].
+# Є list з даними lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8. Functions, namespaces, decorator, 'Python', 9, 0, 'Lorem Ipsum'].
 # Напишіть код, який свормує новий list (наприклад lst2), який містить лише змінні типу стрінг, які
 # присутні в lst1. Зауважте, що lst1 не є статичним і може формуватися динамічно.
 
@@ -161,7 +161,7 @@
 #
 #     return result_list
 #
-# lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']
+# lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8. Functions, namespaces, decorator, 'Python', 9, 0, 'Lorem Ipsum']
 #
 # res = my_function(lst1)
 # print(res)
@@ -178,7 +178,7 @@
 #     print(args)
 #
 # my_function(2, 5, 7)
-# my_function(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+# my_function(1, 2, 3, 4, 5, 6, 7, 8. Functions, namespaces, decorator, 9, 0)
 
 # def my_function(a, b, c, *args):
 #     print("Inside function")
