@@ -17,59 +17,82 @@
 змініть директора (школа без директора не може існувати, директор при цьому переходить в список вчителів,
  а вчитель стає директором, і відповідно, видаляється зі списку вчителів)
 """
-import names
 import random
+from abc import ABC
+import names
+"""додав до коміту файл names"""
 
 
-class Stuff:
+class Stuff(ABC):
+    """
+    ініт клас Stuff
+    """
     def __init__(self, name, last_name, salary):
         self.name = name
         self.last_name = last_name
         self.salary = salary
 
 
+class Teacher(Stuff):
+    """
+    наслідуєм клас Stuff
+    """
+    def __str__(self):
+        return f'{self.name} {self.last_name}, {self.salary}, вчитель'
+
+
+class Technician(Stuff):
+    """
+        наслідуєм клас Stuff
+        """
+    def __str__(self):
+        return f'{self.name} {self.last_name}, {self.salary}, прибиральник'
+
+
 class School:
+    """
+    ініт школу
+    """
 
     def __init__(self, school_name):
         self.school_name = school_name
-        self.director = ''
-        self.teacher_list = [Stuff(random.choice(names.names), random.choice(names.last_names), random.randrange(10000, 50000)) for i in range(5)]
-        self.technicians_list = [Stuff(random.choice(names.names), random.choice(names.last_names), random.randrange(10000, 50000)) for i in range(5)]
-        self.teachers = []
-        self.technicians = []
-        self.summa = []
+        self.teacher_list = [Teacher(random.choice(names.names), random.choice(names.last_names), random.randrange(10000, 50000)) for i in range(5)]
+        self.technicians_list = [Technician(random.choice(names.names), random.choice(names.last_names), random.randrange(10000, 50000)) for i in range(5)]
+        self.director = random.choice(self.teacher_list)
+        self.teacher_list.remove(self.director)
 
-    def total_summa(self):
-        return sum(self.summa)
-
-    def add_teacher(self, other):
+    def add_teacher(self, other: Teacher):
         self.teacher_list.append(other)
 
+    @property
+    def teachers(self):
+        total_teachers = []
         for i in self.teacher_list:
-            self.teachers.append(self.teacher_list[self.teacher_list.index(i)].name + ' ' + self.teacher_list[self.teacher_list.index(i)].last_name)
+            total_teachers.append(self.teacher_list[self.teacher_list.index(i)].name + ' ' + self.teacher_list[self.teacher_list.index(i)].last_name)
+        return total_teachers
 
+    @property
+    def technicians(self):
+        total_technicians = []
         for i in self.technicians_list:
-            self.technicians.append(self.technicians_list[self.technicians_list.index(i)].name + ' ' + self.technicians_list[self.technicians_list.index(i)].last_name)
+            total_technicians.append(self.technicians_list[self.technicians_list.index(i)].name + ' ' + self.technicians_list[self.technicians_list.index(i)].last_name)
+        return total_technicians
 
-        for i in self.teacher_list:
-            self.summa.append(self.teacher_list[self.teacher_list.index(i)].salary)
-
-        for i in self.technicians_list:
-            self.summa.append(self.technicians_list[self.technicians_list.index(i)].salary)
-
-        self.director = random.choice(self.teachers)
-        self.teachers.remove(self.director)
+    @property
+    def total_money(self):
+        teachersalary = sum(obj.salary for obj in self.teacher_list)
+        techsalary = sum(obj.salary for obj in self.technicians_list)
+        summa = techsalary + teachersalary
+        return summa
 
     def change_dir(self):
-        self.teachers.append(self.director)
-        self.director = random.choice(self.teachers)
-        self.teachers.remove(self.director)
+        self.teacher_list.append(self.director)
+        new_dir = random.choice(self.teacher_list)
+        self.teacher_list.remove(new_dir)
+        self.director = new_dir
 
 
 school = School('Asterix and Obelix')
-school.add_teacher(Stuff('Richard', 'Hendrix', 33000))
-school.change_dir()
-
 print(school.teachers)
-print(school.total_summa())
-print(school.director)
+print(school.total_money)
+school.change_dir()
