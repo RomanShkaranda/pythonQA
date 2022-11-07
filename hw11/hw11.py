@@ -18,7 +18,7 @@
  а вчитель стає директором, і відповідно, видаляється зі списку вчителів)
 """
 import random
-from abc import ABC
+from abc import ABC, abstractmethod
 import names
 """додав до коміту файл names"""
 
@@ -31,6 +31,10 @@ class Stuff(ABC):
         self.name = name
         self.last_name = last_name
         self.salary = salary
+
+    @abstractmethod
+    def __str__(self):
+        pass
 
 
 class Teacher(Stuff):
